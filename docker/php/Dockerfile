@@ -40,6 +40,11 @@ RUN rm -rf /var/cache/apk/* && rm -rf /tmp/* && \
     curl --insecure https://getcomposer.org/composer.phar -o /usr/bin/composer && chmod +x /usr/bin/composer
 
 ADD php-fpm.conf /etc/php7/php-fpm.d/
+ADD php.ini /etc/php7/
+
+RUN adduser -D -g 'www' www \
+    && mkdir /var/www \
+    && chown -R www:www /var/www
 
 CMD ["php-fpm7", "-F"]
 

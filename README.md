@@ -30,8 +30,5 @@ docker-compose exec php sh
 composer create-project --repository=https://repo.magento.com/ magento/project-community-edition .
 ``` 
 
-#### replace in magento/nginx.conf.sample the fast
-`fastcgi_backend` with `php-upstream`
-
 #### using web setup wizard
 http://localhost/setup
